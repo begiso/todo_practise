@@ -5,7 +5,7 @@ export const Form = (props: { createNewTodo: Function }) => {
   const [text, setText] = useState<string>("");
 
   const formSubmit = () => {
-    if (text) {
+    if (text && text.trim().length > 0) {
       props.createNewTodo(text);
       setText("");
     }
