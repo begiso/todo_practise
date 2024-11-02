@@ -1,11 +1,13 @@
 import { useState } from "react";
-import "./Form.css";
+import { FormControl, FormBlock, FormField, FormLabel, FormWrapper } from "./Form.styled";
+
+import plusIcon from '../../assets/images/plus.png'
 
 export const Form = (props: { createNewTodo: Function }) => {
   const [text, setText] = useState<string>("");
 
   const formSubmit = (event: React.SyntheticEvent) => {
-    event.preventDefault()
+    event.preventDefault();
     if (text && text.trim().length > 0) {
       props.createNewTodo(text);
       setText("");
@@ -13,17 +15,17 @@ export const Form = (props: { createNewTodo: Function }) => {
   };
 
   return (
-    <div className="form-wrapper">
-      <form action="#" onSubmit={formSubmit}>
-        <label>
-          <input
+    <FormWrapper>
+      <FormBlock action="#" onSubmit={formSubmit}>
+        <FormLabel>
+          <FormField
             type="text"
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
-          <button></button>
-        </label>
-      </form>
-    </div>
+          <FormControl icon={plusIcon}/>
+        </FormLabel>
+      </FormBlock>
+    </FormWrapper>
   );
 };
