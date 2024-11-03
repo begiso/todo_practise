@@ -1,7 +1,13 @@
 import { useState } from "react";
-import { FormControl, FormBlock, FormField, FormLabel, FormWrapper } from "./Form.styled";
+import {
+  FormControl,
+  FormBlock,
+  FormField,
+  FormLabel,
+  FormWrapper,
+} from "./Form.styled";
 
-import plusIcon from '../../assets/images/plus.png'
+import plusIcon from "../../assets/images/plus.png";
 
 export const Form = (props: { createNewTodo: Function }) => {
   const [text, setText] = useState<string>("");
@@ -23,7 +29,7 @@ export const Form = (props: { createNewTodo: Function }) => {
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
-          <FormControl icon={plusIcon}/>
+          <FormControl icon={plusIcon} />
         </FormLabel>
       </FormBlock>
     </FormWrapper>

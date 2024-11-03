@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const FormWrapper = styled.div`
   width: 100%;
   height: 80px;
 
@@ -15,8 +15,8 @@ export const Wrapper = styled.div`
 `;
 
 export const FormBlock = styled.form``;
-export const Label = styled.label``;
-export const Input = styled.input`
+export const FormLabel = styled.label``;
+export const FormField = styled.input`
   width: 100%;
   height: 50px;
   color: #fff;
@@ -31,11 +31,10 @@ export const Input = styled.input`
   outline: none;
 `;
 
-export const Button = styled.button<{icon: string}>`
+export const FormControl = styled.button<{ icon: string }>`
   width: 50px;
   height: 50px;
-  background: transparent url(${(props) => props.icon}) no-repeat
-    center/cover;
+  background: transparent url(${(props) => props.icon}) no-repeat center/cover;
   position: absolute;
   top: 15px;
   right: 15px;
