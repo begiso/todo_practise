@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const Headerblock = styled.header`
   position: fixed;
@@ -20,4 +21,17 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const StyledNavLink = styled(NavLink).attrs((props) => ({
+  activeClassName: "active",
+}))`
+
+  text-decoration: none;
+  padding: 10px;
+  color: #fff;
+
+  &.active {
+    color: #ffffff33;
+  }
 `;
